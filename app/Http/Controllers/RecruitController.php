@@ -7,9 +7,16 @@ use App\Models\Recruit;
 
 class RecruitController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $recruits = Recruit::simplePaginate(10);
+        $recruitment = $request->recruitment;
+        $workplace = $request->workplace;
+        $salary = $request->salary;
+
+        $params = $request->query();
+        $recruits = Recruit::search($params)->paginate(10);
+        
+        $recruits->appends(compact('recruitment', 'workplace','salary'));
         return view('recruits.index', compact('recruits'));
     }
 

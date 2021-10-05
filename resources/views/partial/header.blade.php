@@ -10,10 +10,11 @@
                 <a class="nav-link" href="{{ route('recruits.index') }}">Home <span class="sr-only">(current)</span></a>
             </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="募集職種">
-            <input class="form-control mr-sm-2" type="search" placeholder="勤務地">
-            <input class="form-control mr-sm-2" type="search" placeholder="給与">
+        <form class="form-inline my-2 my-lg-0" mechod="GET" action="{{ route('recruits.index') }}">
+            <input class="form-control mr-sm-2" type="search"  name="recruitment" placeholder="募集職種">
+            <input class="form-control mr-sm-2" type="search" name="workplace" placeholder="勤務地">
+            <input class="form-control mr-sm-2" type="search" name="salary" placeholder="給与">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </form>
     </div>
 </nav>
