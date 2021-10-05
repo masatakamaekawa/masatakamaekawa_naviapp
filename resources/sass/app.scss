@@ -1,0 +1,18 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+.square-img{
+    height: 240px;
+    width: 240px;
+    object-fit: cover;
+}
+
+.logo {
+    font-family: 'Kosugi Maru', sans-serif;
+}
