@@ -12,4 +12,7 @@
             @endforeach
         </ul>
     @endif
+    <div class="d-flex justify-content-center">
+        {{ $recruits->links() }}
+    </div>
 @endsection

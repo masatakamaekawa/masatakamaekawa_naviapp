@@ -13,6 +13,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call(RecruitSeeder::class);
+        \App\Models\Recruit::factory(20)->create();
     }
 }

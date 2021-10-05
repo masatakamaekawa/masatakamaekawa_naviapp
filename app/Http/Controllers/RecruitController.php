@@ -9,7 +9,7 @@ class RecruitController extends Controller
 {
     public function index()
     {
-        $recruits = Recruit::simplepaginate(10);
+        $recruits = Recruit::simplePaginate(10);
         return view('recruits.index', compact('recruits'));
     }
 
