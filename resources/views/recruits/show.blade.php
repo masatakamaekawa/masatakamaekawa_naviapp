@@ -23,7 +23,7 @@
             </tr>
             <tr>
                 <th>募集職種</th>
-                <td>{{ $recruit->recruitment }}</td>
+                <td>{{ $recruit->recruitoment }}</td>
             </tr>
             <tr>
                 <th>勤務地</th>

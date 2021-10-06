@@ -9,14 +9,14 @@ class RecruitController extends Controller
 {
     public function index(Request $request)
     {
-        $recruitment = $request->recruitment;
+        $recruitoment = $request->recruitoment;
         $workplace = $request->workplace;
         $salary = $request->salary;
 
         $params = $request->query();
         $recruits = Recruit::search($params)->paginate(10);
         
-        $recruits->appends(compact('recruitment', 'workplace','salary'));
+        $recruits->appends(compact('recruitoment', 'workplace','salary'));
         return view('recruits.index', compact('recruits'));
     }
 

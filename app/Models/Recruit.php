@@ -12,8 +12,8 @@ class Recruit extends Model
 
     public function scopeSearch(Builder $query, $params)
     {
-        if (!empty($params['recruitment'])) {
-            $query->where('recruitment', 'like', '%' . $params['recruitment'] . '%');
+        if (!empty($params['recruitoment'])) {
+            $query->where('recruitoment', 'like', '%' . $params['recruitoment'] . '%');
         }
         if (!empty($params['workplace'])) {
             $query->where('workplace', 'like', '%' . $params['workplace'] . '%');

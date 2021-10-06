@@ -18,7 +18,7 @@ class CreateRecruitsTable extends Migration
             $table->string('name');
             $table->string('address');
             $table->string('phone');
-            $table->string('recruitment');
+            $table->string('recruitoment');
             $table->string('workplace');
             $table->string('salary');
             $table->text('note');
