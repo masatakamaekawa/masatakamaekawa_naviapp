@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,6 +8,7 @@
     <title>auction edit</title>
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
+
 <body>
     <h1>求人更新フォーム</h1>
     <form action="/recruits/{{ $recruit->id }}" method="post">
@@ -25,16 +27,12 @@
             <label for="phone">電話番号</label>
             <input type="text" name="phone" id="phone" value="{{ old('phone', $recruit->phone) }}">
         </div>
-        <div>
-            <label for="recruitoment">募集職種</label>
-            <input type="text" name="recruitoment" id="recruitoment" value="{{ old('recruitoment', $recruit->recruitoment) }}">
-        </div>
-        
         <div class="form-group">
             <label for="recruitoment">募集職種</label>
             <select name="recruitoment" id="recruitoment">
                 @foreach ($recruitoments as $recruitoment)
-                    <option value="{{ $recruitoment->id }}" @if(old('recruitoment') == $recruitoment->id) selected @endif>{{ $recruitoment->name }}</option>
+                    <option value="{{ $recruitoment->id }}" @if (old('recruitoment', $recruit->recruitoment_id) == $recruitoment->id) selected @endif>{{ $recruitoment->name }}
+                    </option>
                 @endforeach
             </select>
         </div>
@@ -53,10 +51,11 @@
         <div>
             <label for="image_url">画像URL</label>
             <input type="text" name="image_url" id="image_url" value="{{ old('image_url', $recruit->image_url) }}">
-        </p>
+            </p>
 
-        <input type="submit" value="更新">
+            <input type="submit" value="更新">
     </form>
     <input type="button" value="戻る" onclick="location.href='/recruits/{{ $recruit->id }}'" class="btn btn-primary">
 </body>
+
 </html>

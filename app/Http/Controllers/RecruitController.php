@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Recruit;
+use App\Models\Recruitoment;
 
 class RecruitController extends Controller
 {
@@ -54,7 +55,8 @@ class RecruitController extends Controller
     public function edit($id) 
     {
         $recruit = Recruit::find($id);
-        return view('recruits.edit', ['recruit' => $recruit]);
+        $recruitoments = Recruitoment::all();
+        return view('recruits.edit', ['recruit' => $recruit, 'recruitoments' => $recruitoments]);
     }
     public function update(Request $request, $id) 
     {

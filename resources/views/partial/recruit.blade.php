@@ -1,6 +1,6 @@
 <div class="row">
     <div>
-        <img src="{{ url($recruit->img_path) }}" class="square-img">
+        <img src="{{ Storage::disk('public')->url($recruit->img_path) }}" class="square-img">
     </div>
     <div class="ml-3">
         <div class="mt-3 mb-3">

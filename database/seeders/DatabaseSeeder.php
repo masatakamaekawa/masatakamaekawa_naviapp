@@ -15,5 +15,6 @@ class DatabaseSeeder extends Seeder
     {
         //\App\Models\Recruit::factory(20)->create();
         $this->call(RecruitomentSeeder::class);
+        $this->call(RecruitSeeder::class);
     }
 }
