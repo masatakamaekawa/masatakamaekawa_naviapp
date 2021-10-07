@@ -13,9 +13,7 @@ class AddImgPathToRecruitsTable extends Migration
      */
     public function up()
     {
-        Schema::table('recruits', function (Blueprint $table) {
-            $table->string('img_path')->after('note');
-        });
+
     }
 
     /**
@@ -25,8 +23,6 @@ class AddImgPathToRecruitsTable extends Migration
      */
     public function down()
     {
-        Schema::table('recruits', function (Blueprint $table) {
-            $table->dropColumn('img_path');
-        });
+
     }
 }

@@ -13,12 +13,10 @@ use App\Http\Controllers\RecruitController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::resource('recruits', App\Http\Controllers\RecruitController::class);
+Route::resource('recruits', RecruitController::class);
 Route::get('/', [RecruitController::class, 'index'])
 ->name('root');
-Route::resource('recruits', RecruitController::class)
-    ->only(['index', 'show']);
+
 
 // リソースを使用しない場合
 // Route::get('/recruits', [App\Http\Controllers\RecruitController::class, 'index']);
