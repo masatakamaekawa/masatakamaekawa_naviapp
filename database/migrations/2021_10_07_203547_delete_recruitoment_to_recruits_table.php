@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddImgPathToRecruitsTable extends Migration
+class DeleteRecruitomentToRecruitsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,7 +14,7 @@ class AddImgPathToRecruitsTable extends Migration
     public function up()
     {
         Schema::table('recruits', function (Blueprint $table) {
-            $table->string('img_path')->after('note');
+            $table->dropColumn('recruitoment'); 
         });
     }
 
@@ -26,7 +26,7 @@ class AddImgPathToRecruitsTable extends Migration
     public function down()
     {
         Schema::table('recruits', function (Blueprint $table) {
-            $table->dropColumn('img_path');
+            $table->string('recruitoment')->default('営業職')->after('phone');
         });
     }
 }

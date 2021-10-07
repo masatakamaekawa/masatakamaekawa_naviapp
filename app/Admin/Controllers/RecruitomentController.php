@@ -2,20 +2,20 @@
 
 namespace App\Admin\Controllers;
 
-use App\Models\recruitments;
+use App\Models\Recruit;
 use Encore\Admin\Controllers\AdminController;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
 use Encore\Admin\Show;
 
-class RecruitmentController extends AdminController
+class RecruitController extends AdminController
 {
     /**
      * Title for current resource.
      *
      * @var string
      */
-    protected $title = 'Recruitments';
+    protected $title = 'recruit';
 
     /**
      * Make a grid builder.
@@ -24,7 +24,7 @@ class RecruitmentController extends AdminController
      */
     protected function grid()
     {
-        $grid = new Grid(new recruitments());
+        $grid = new Grid(new Recruit());
 
         $grid->column('id', __('Id'));
         $grid->column('name', __('Name'));
@@ -40,7 +40,7 @@ class RecruitmentController extends AdminController
      */
     protected function detail($id)
     {
-        $show = new Show(recruitments::findOrFail($id));
+        $show = new Show(Recruit::findOrFail($id));
 
         $show->field('id', __('Id'));
         $show->field('name', __('Name'));
@@ -55,16 +55,16 @@ class RecruitmentController extends AdminController
      */
     protected function form()
     {
-        $form = new Form(new recruitments());
+        $form = new Form(new Recruit());
 
         $form->text('name', __('Name'));
         $form->text('address', __('Address'));
         $form->text('phone', __('Phone'));
-        $form->select('rexruitment_id', __('Recruitment'))->options(\App\Models\Recruitments::all()->pluck('name', 'id'));
+        $form->select('recruitoment_id', __('Recruitoment'))->options(\App\Models\Recruitoment::all()->pluck('name', 'id'));
         $form->text('workplace', __('Workplace'));
         $form->text('salary', __('Salary'));
         $form->text('note', __('Note'));
-        $form->text('img_path', __('Img path'));
+        $form->image('img_path', __('Img path'));->move('recruit_image')->uniqueName();
         $form->text('latitude', __('Latitude'));
         $form->text('longitude', __('Longitude'));
 

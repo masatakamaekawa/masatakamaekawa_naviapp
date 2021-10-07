@@ -17,7 +17,7 @@ class AddRecruitomentIdToRecruitsTable extends Migration
             $table->integer('recruitoment_id')            
                 ->after('recruitoment')                    
                 ->unsigned()                          
-                ->default(3);                           
+                ->default(2);                           
             $table->foreign('recruitoment_id')              
                 ->references('id')->on('recruitoments')    
                 ->onDelete('restrict');                 
