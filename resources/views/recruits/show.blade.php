@@ -1,6 +1,7 @@
 @extends('layouts.main')
 
 @section('title', '詳細画面')
+<link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
 @section('content')
     @include('partial.recruit')
@@ -37,6 +38,9 @@
                 <th>会社概要</th>
                 <td>{{ $recruit->note }}</td>
             </tr>
+            <tr>
+            <img src="{{ $recruit->image_url }}">
+            </tr>
         </tbody>
     </table>
     <div id="map" style="height: 30vh"></div>
@@ -50,4 +54,13 @@
             .bindPopup("{{ $recruit->name }}", {closeButton: false})
             .addTo(map);
     </script>
+    <div class="button-group">
+        <input type="button" value="編集" onclick="location.href='/recruits/{{ $recruit->id }}/edit'" class="btn btn-success">
+        <form action="/recruits/{{ $recruit->id }}" method="post">
+            @csrf
+            @method('DELETE')
+            <button type="submit" onclick="if(!confirm('削除しますか?')){return false}" class="btn btn-danger">削除</button>
+        </form>
+    </div>
+</body>
 @endsection

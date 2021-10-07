@@ -15,7 +15,6 @@ class RecruitSeeder extends Seeder
     public function run()
     {
         DB::table('recruits')->insert([
-            [
                 'name' => '株式会社 SPARTA',
                 'address' => '〒0287111 岩手県八幡平市大更35-62',
                 'phone' => '012-3456-7890',
@@ -26,7 +25,9 @@ class RecruitSeeder extends Seeder
                 'img_path' =>'',
                 'latitude' =>'',
                 'longitude' =>'',
-            ],
+            ]);
+
+            $param = [
             [
                 'name' => '株式会社 八幡平',
                 'address' => '〒0287111 岩手県八幡平市大更35-62',
@@ -38,7 +39,8 @@ class RecruitSeeder extends Seeder
                 'img_path' =>'',
                 'latitude' =>'',
                 'longitude' =>'',
-            ],
-        ]);
+            ]
+        ];
+        DB::table('recruits')->insert($param);
     }
 }
