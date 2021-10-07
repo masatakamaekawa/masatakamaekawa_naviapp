@@ -15,5 +15,4 @@
     <div class="d-flex justify-content-center">
         {{ $recruits->links() }}
     </div>
-    <a href="/recruits/create">求人登録</a>
-    @endsection
+@endsection

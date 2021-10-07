@@ -14,12 +14,12 @@ use App\Http\Controllers\RecruitController;
 |
 */
 
+Route::resource('recruits', App\Http\Controllers\RecruitController::class);
 Route::get('/', [RecruitController::class, 'index'])
-    ->name('root');
+->name('root');
 Route::resource('recruits', RecruitController::class)
     ->only(['index', 'show']);
 
-Route::resource('recruits', App\Http\Controllers\RecruitController::class);
 // リソースを使用しない場合
 // Route::get('/recruits', [App\Http\Controllers\RecruitController::class, 'index']);
 // Route::get('/recruits/create', [App\Http\Controllers\RecruitController::class, 'create']);

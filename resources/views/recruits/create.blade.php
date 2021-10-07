@@ -47,8 +47,9 @@
         </p>
 
         <input type="submit" value="登録">
+        
     </form>
-    <a href="{{ route('recruis.index') }}">戻る</a>
+    <a href="{{ route('recruits.index') }}">戻る</a>
     
 </body>
 

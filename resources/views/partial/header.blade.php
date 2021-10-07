@@ -11,6 +11,7 @@
             </li>
             </li>
         </ul>
+        <a href="/recruits/create" class="btn btn-outline-primary my-2 my-sm-0 mr-2">求人登録</a>
         <form class="form-inline my-2 my-lg-0" mechod="GET" action="{{ route('recruits.index') }}">
             <input class="form-control mr-sm-2" type="search"  name="recruitoment" placeholder="募集職種">
             <input class="form-control mr-sm-2" type="search" name="workplace" placeholder="勤務地">
