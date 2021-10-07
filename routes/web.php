@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RecruitController;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,7 +13,16 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::resource('recruits', RecruitController::class);
+Route::get('/', [RecruitController::class, 'index'])
+->name('root');
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+// リソースを使用しない場合
+// Route::get('/recruits', [App\Http\Controllers\RecruitController::class, 'index']);
+// Route::get('/recruits/create', [App\Http\Controllers\RecruitController::class, 'create']);
+// Route::post('/recruits', [App\Http\Controllers\RecruitController::class, 'store']);
+// Route::get('/recruits/{recruit}', [App\Http\Controllers\RecruitController::class, 'show']);
+// Route::get('/recruits/{recruit}/edit', [App\Http\Controllers\RecruitController::class, 'edit']);
+// Route::patch('/recruits/{recruit}', [App\Http\Controllers\RecruitController::class, 'update']);
+// Route::delete('/recruits/{recruit}', [App\Http\Controllers\RecruitController::class, 'destroy']);
