@@ -13,7 +13,9 @@ class Recruit extends Model
     public function scopeSearch(Builder $query, $params)
     {
         if (!empty($params['recruitoment'])) {
-            $query->where('recruitoment', 'like', '%' . $params['recruitoment'] . '%');
+            $query->whereHas('Recruitoment', function($q) use ($params){
+                $q->where('name', 'like', '%' . $params['recruitoment'] . '%');
+            });
         }
         if (!empty($params['workplace'])) {
             $query->where('workplace', 'like', '%' . $params['workplace'] . '%');
@@ -23,5 +25,8 @@ class Recruit extends Model
         }
         return $query;
     }
-
+    public function recruitoment()
+    {
+        return $this->belongsTo(\App\Models\Recruitoment::class);
+    }
 }

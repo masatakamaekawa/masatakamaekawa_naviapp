@@ -29,6 +29,14 @@
             <label for="recruitoment">募集職種</label>
             <input type="text" name="recruitoment">
         </p>
+        <div class="form-group">
+            <label for="recruitoment">募集職種</label>
+            <select name="recruitoment" id="recruitoment">
+                @foreach ($recruitoments as $recruitoment)
+                    <option value="{{ $recruitoment->id }}" @if(old('recruitoment') == $recruitoment->id) selected @endif>{{ $recruitoment->name }}</option>
+                @endforeach
+            </select>
+        </div>
         <p>
             <label for="workplace">勤務地</label>
             <input type="text" name="workplace">

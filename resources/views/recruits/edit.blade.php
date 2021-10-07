@@ -29,6 +29,15 @@
             <label for="recruitoment">募集職種</label>
             <input type="text" name="recruitoment" id="recruitoment" value="{{ old('recruitoment', $recruit->recruitoment) }}">
         </div>
+        
+        <div class="form-group">
+            <label for="recruitoment">募集職種</label>
+            <select name="recruitoment" id="recruitoment">
+                @foreach ($recruitoments as $recruitoment)
+                    <option value="{{ $recruitoment->id }}" @if(old('recruitoment') == $recruitoment->id) selected @endif>{{ $recruitoment->name }}</option>
+                @endforeach
+            </select>
+        </div>
         <div>
             <label for="workplace">勤務地</label>
             <input type="text" name="workplace" id="workplace" value="{{ old('workplace', $recruit->workplace) }}">

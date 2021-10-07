@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Recruitoment extends Model
 {
     use HasFactory;
+
+    public function recruits()
+    {
+        return $this->hasMany(\App\Models\Recruit::class);
+    }
 }
