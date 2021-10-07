@@ -51,8 +51,7 @@
         <div>
             <label for="image_url">画像URL</label>
             <input type="text" name="image_url" id="image_url" value="{{ old('image_url', $recruit->image_url) }}">
-            </p>
-
+        </div>
             <input type="submit" value="更新">
     </form>
     <input type="button" value="戻る" onclick="location.href='/recruits/{{ $recruit->id }}'" class="btn btn-primary">
